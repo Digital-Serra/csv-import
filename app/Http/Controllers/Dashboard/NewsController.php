@@ -56,6 +56,7 @@ class NewsController extends Controller
         });
 
         $results = Excel::load($request->file('table'), function($reader){
+            $reader->ignoreEmpty();
             $reader->all();
         }, 'UTF-8')->get();
         foreach($results as $result){
