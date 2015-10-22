@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Digital Serra Tecnologia Digital">
-    <title>Administração</title>
+    <title>@yield('title')</title>
 
     <!-- Bootstrap and Font Awesome Core CSS -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -70,17 +70,17 @@
                 </li>
                 <li>
                     <a href="javascript:;" data-toggle="collapse" data-target="#ofertas"><i
-                                class="fa fa-fw fa-gift"></i> Ofertas <i class="fa fa-fw fa-caret-down"></i></a>
+                                class="fa fa-fw fa-gift"></i> Emails <i class="fa fa-fw fa-caret-down"></i></a>
                     <ul id="ofertas" class="collapse">
                         <li>
-                            <a href=""><i class="fa fa-fw fa-eye"></i> Ver ofertas</a>
+                            <a href=""><i class="fa fa-fw fa-eye"></i> Ver emails</a>
                         </li>
                         <li>
-                            <a href=""><i class="fa fa-fw fa-plus"></i> Nova oferta</a>
+                            <a href="{{ route('dashboard.getImport') }}"><i class="fa fa-fw fa-plus"></i> Importar emails</a>
                         </li>
                     </ul>
                 </li>
-                <li>
+                {{--<li>
                     <a href="javascript:;" data-toggle="collapse" data-target="#galeria"><i
                                 class="fa fa-fw fa-object-group"></i> Projetos <i
                                 class="fa fa-fw fa-caret-down"></i></a>
@@ -105,7 +105,7 @@
                             <a href=""><i class="fa fa-fw fa-plus"></i> Nova Imagem</a>
                         </li>
                     </ul>
-                </li>
+                </li>--}}
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -132,16 +132,16 @@
             </div>
             <!-- /.row -->
             <div class="row">
-                <div class="col-lg-4 col-md-4">
+                <div class="col-lg-12 col-md-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-gift fa-5x"></i>
+                                    <i class="fa fa-newspaper-o fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge"></div>
-                                    <div>Ofertas</div>
+                                    <div>Emails</div>
                                 </div>
                             </div>
                         </div>
@@ -155,7 +155,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4">
+                {{--<div class="col-lg-4 col-md-4">
                     <div class="panel panel-green">
                         <div class="panel-heading">
                             <div class="row">
@@ -200,7 +200,7 @@
                             </div>
                         </a>
                     </div>
-                </div>
+                </div>--}}
             </div>
             <!-- /.row -->
 
