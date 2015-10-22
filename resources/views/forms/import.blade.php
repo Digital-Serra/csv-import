@@ -1,3 +1,3 @@
 <div class="form-input">
-    {!! Form::file('emails') !!}
+    {!! Form::file('table') !!}
 </div>

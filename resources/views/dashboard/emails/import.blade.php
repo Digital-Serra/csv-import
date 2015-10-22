@@ -6,5 +6,7 @@
 
     {!! Form::open(['url' => route('dashboard.postImport'),'files'=>'true']) !!}
         @include('forms.import')
+    <br>
+        <button class="btn btn-success" type="submit">Importar</button>
     {!! Form::close() !!}
 @stop

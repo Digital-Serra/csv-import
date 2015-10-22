@@ -73,7 +73,7 @@
                                 class="fa fa-fw fa-gift"></i> Emails <i class="fa fa-fw fa-caret-down"></i></a>
                     <ul id="ofertas" class="collapse">
                         <li>
-                            <a href=""><i class="fa fa-fw fa-eye"></i> Ver emails</a>
+                            <a href="{{ route('dashboard.showEmails') }}"><i class="fa fa-fw fa-eye"></i> Ver emails</a>
                         </li>
                         <li>
                             <a href="{{ route('dashboard.getImport') }}"><i class="fa fa-fw fa-plus"></i> Importar emails</a>
@@ -140,12 +140,12 @@
                                     <i class="fa fa-newspaper-o fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge"></div>
+                                    <div class="huge">{{ $emails->count() }}</div>
                                     <div>Emails</div>
                                 </div>
                             </div>
                         </div>
-                        <a href="">
+                        <a href="{{ route('dashboard.showEmails') }}">
                             <div class="panel-footer">
                                 <span class="pull-left">Veja</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
