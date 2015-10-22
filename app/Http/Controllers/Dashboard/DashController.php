@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Email;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -18,6 +19,6 @@ class DashController extends Controller
 
     public function index()
     {
-        return view('dashboard.index',['user'=>$this->user->name]);
+        return view('dashboard.index',['user'=>$this->user->name,'emails'=>Email::all()]);
     }
 }
