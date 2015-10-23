@@ -205,7 +205,7 @@
             <!-- /.row -->
 
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-12" id="errors">
                     @unless($errors->isEmpty())
                         <ul style="list-style: none;">
                             @foreach($errors->getMessages() as $error)
