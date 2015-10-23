@@ -201,9 +201,9 @@
                                                                     <tr>
                                                                         <td align="left" class="textContent">
                                                                             <!-- CONTENT // -->
-                                                                            <div style="font-family:Helvetica,Arial,sans-serif;font-size:13px;color:#828282;text-align:center;line-height:120%;">
+                                                                            {{--<div style="font-family:Helvetica,Arial,sans-serif;font-size:13px;color:#828282;text-align:center;line-height:120%;">
                                                                                 If you can't see this message, <a href="#" target="_blank" style="text-decoration:none;border-bottom:1px solid #828282;color:#828282;"><span style="color:#828282;">view&nbsp;it&nbsp;in&nbsp;your&nbsp;browser</span></a>.
-                                                                            </div>
+                                                                            </div>--}}
                                                                         </td>
                                                                     </tr>
                                                                 </table>
@@ -247,7 +247,7 @@
                                 tables centered in the emailBody table,
                                 in case its width is set to 100%.
                             -->
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="color:#FFFFFF;" bgcolor="#3498db">
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="color:#FFFFFF;" bgcolor="#16ABA8">
                                 <tr>
                                     <td align="center" valign="top">
                                         <!-- FLEXIBLE CONTAINER // -->
@@ -334,7 +334,7 @@
                                                 <td style="padding-top:0;" align="center" valign="top" width="500" class="flexibleContainerCell">
 
                                                     <!-- CONTENT TABLE // -->
-                                                    <table border="0" cellpadding="0" cellspacing="0" width="50%" class="emailButton" style="background-color: #3498DB;">
+                                                    <table border="0" cellpadding="0" cellspacing="0" width="50%" class="emailButton" style="background-color: #16ABA8;">
                                                         <tr>
                                                             <td align="center" valign="middle" class="buttonContent" style="padding-top:15px;padding-bottom:15px;padding-right:15px;padding-left:15px;">
                                                                 <a style="color:#FFFFFF;text-decoration:none;font-family:Helvetica,Arial,sans-serif;font-size:20px;line-height:135%;" href="#" target="_blank">Confirmation</a>
