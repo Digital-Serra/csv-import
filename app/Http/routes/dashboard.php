@@ -13,8 +13,8 @@ Route::group(['middleware' => 'auth','namespace'=>'Dashboard'], function () {
 
 
     // Test email templates
-    Route::get('/dashboard/emails/template/{name}',function($name){
-        return view('emails.templates.'.$name);
+    Route::get('/dashboard/emails/templates/{name}',function($name){
+        return view('emails.templates.'.$name)->with('nome','Digital Serra')->with('email','contato@digitalserra.com.br');
     });
 
 
