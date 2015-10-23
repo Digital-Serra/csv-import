@@ -66,7 +66,7 @@ class NewsController extends Controller
 
         $this->dispatch(new SendEmail());
 
-        Flash::success("Seus emails estão sendo enviados! Quando a tarefo for concluida avisaremos!");
+        Flash::success("Seus emails estão sendo enviados!");
 
         return redirect()->to(route('dashboard.getImport'));
     }
