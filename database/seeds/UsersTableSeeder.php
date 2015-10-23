@@ -14,7 +14,7 @@ class UsersTableSeeder extends Seeder
     {
         DB::table('users')->insert([
             'name'=>'digitalserra',
-            'password'=>bcrypt('con2007digital'),
+            'password'=>bcrypt('senhateste'),
             'email'=> 'contato@digitalserra.com.br',
             'created_at'=> \Carbon\Carbon::now(),
             'updated_at'=> \Carbon\Carbon::now(),

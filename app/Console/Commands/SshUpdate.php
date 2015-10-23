@@ -38,6 +38,6 @@ class SshUpdate extends Command
      */
     public function handle()
     {
-        \SSH::run(['cd public_html','git pull origin master']);
+        \SSH::run(['cd \var\www\html\laravel','git pull origin master']);
     }
 }
