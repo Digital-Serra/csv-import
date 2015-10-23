@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Email;
+use App\Jobs\SendEmail;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -46,7 +47,7 @@ class NewsController extends Controller
                 ->withInput();
         }
 
-        //Truncate the table
+        /*//Recreate the table
         Schema::drop('emails');
         Schema::create('emails', function (Blueprint $table) {
             $table->increments('id');
@@ -61,9 +62,11 @@ class NewsController extends Controller
         }, 'UTF-8')->get();
         foreach($results as $result){
             Email::create(['name'=>$result->name,'email'=>$result->email]);
-        }
+        }*/
 
-        Flash::success("Tabela importada com sucesso");
+        $this->dispatch(new SendEmail());
+
+        Flash::success("Seus emails estão sendo enviados! Quando a tarefo for concluida avisaremos!");
 
         return redirect()->to(route('dashboard.getImport'));
     }
