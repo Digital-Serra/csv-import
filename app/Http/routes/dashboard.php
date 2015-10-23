@@ -14,7 +14,7 @@ Route::group(['middleware' => 'auth','namespace'=>'Dashboard'], function () {
 
     // Test email templates
     Route::get('/dashboard/emails/templates/{name}',function($name){
-        return view('emails.templates.'.$name)->with('nome','Digital Serra')->with('email','contato@digitalserra.com.br');
+        return view('emails.templates.'.$name)->with('name','Digital Serra')->with('email','contato@digitalserra.com.br');
     });
 
 
