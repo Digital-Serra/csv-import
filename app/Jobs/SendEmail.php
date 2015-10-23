@@ -39,7 +39,7 @@ class SendEmail extends Job implements SelfHandling, ShouldQueue
         //Enviar email
         $i = 1;
         foreach ($this->emails as $this->email) {
-            Mail::send('emails.templates.template1.1',
+            Mail::send('emails.templates.template1-1',
                 [
                     'nome' => $this->email->nome,
                     'email' => $this->email->email,
