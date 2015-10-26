@@ -17,7 +17,8 @@ Route::group(['middleware' => 'auth','namespace'=>'Dashboard'], function () {
         return view('emails.templates.'.$name)
             ->with('name','Digital Serra')
             ->with('email','contato@digitalserra.com.br')
-            ->with('title','Tìtulo');
+            ->with('title','Tìtulo')
+            ->with('token',bin2hex(random_bytes(30)));
     });
 
 
