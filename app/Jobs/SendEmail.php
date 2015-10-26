@@ -41,13 +41,14 @@ class SendEmail extends Job implements SelfHandling, ShouldQueue
         foreach ($this->emails as $this->email) {
             Mail::send('emails.templates.template1-1',
                 [
-                    'nome' => $this->email->nome,
+                    'name' => $this->email->name,
                     'token' => $this->email->token,
                     'email' => $this->email->email,
                     'title' => 'Título',
                 ], function ($message) {
-                    $message->from(env('MAIL_ADMIN', null), env('MAIL_ADMIN_NAME',null));
-                    $message->to($this->email->email, $this->email->name)->subject('Olá e bem vindo!');
+                    $message->from(env('MAIL_ADMIN', null), env('MAIL_ADMIN_NAME',null))
+                        ->to($this->email->email, $this->email->name)
+                        ->subject('Olá e bem vindo!');
                 });
 
             //Log emails sended
