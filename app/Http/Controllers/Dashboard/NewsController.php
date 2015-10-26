@@ -7,6 +7,7 @@ use App\Jobs\SendEmail;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Validator;
 use Laracasts\Flash\Flash;
@@ -14,10 +15,13 @@ use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Database\Schema\Blueprint;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class NewsController extends Controller
 {
     public $user;
+
+    private $email;
 
     public function __construct()
     {
@@ -61,7 +65,7 @@ class NewsController extends Controller
             $reader->all();
         }, 'UTF-8')->get();
         foreach($results as $result){
-            Email::create(['name'=>$result->name,'email'=>$result->email]);
+            Email::create(['name'=>$result->name,'email'=>$result->email,'token'=>bin2hex(random_bytes(30))]);
         }*/
 
         $this->dispatch(new SendEmail());
@@ -71,8 +75,33 @@ class NewsController extends Controller
         return redirect()->to(route('dashboard.getImport'));
     }
 
+    /**
+     * @return $this
+     */
     public function showEmails()
     {
         return view('dashboard.emails.show')->with('user',$this->user->name)->with('list_emails',Email::paginate(15))->with('emails',Email::all());
+    }
+
+    /**
+     * Cancel the user subscription
+     */
+    public function cancelSubscription($token)
+    {
+        $this->email = Email::where('token','=',$token)->first();
+
+        if($this->email == null){
+            throw new NotFoundHttpException;
+        }
+
+        Mail::queue([], [], function ($message) {
+                $message->from(env('MAIL_ADMIN', null), env('MAIL_ADMIN_NAME',null));
+                $message->to(env('MAIL_ADMIN', null), env('MAIL_ADMIN_NAME', null))->subject('Um usuário cancelou a inscrição!');
+                $message->setBody("Olá, o usuário ".$this->email->name."<".$this->email->email."> cancelou sua inscrição para receber emails do site, ele também foi automaticamente deletado do banco de dados.");
+            });
+
+        // Delete the subscriber
+        $this->email->delete();
+        return "Sua inscrição foi removida, você não receberá mais emails.";
     }
 }
