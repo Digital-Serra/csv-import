@@ -283,7 +283,7 @@
                                 <tr>
                                     <td align="center" valign="top">
                                         <!-- FLEXIBLE CONTAINER // -->
-                                        <a href="www.digitalserra.com.br">
+                                        <a href="http://elecomp.com.br" target='_blank'>
                                         <table border="0" cellpadding="30" cellspacing="0" width="500" class="flexibleContainer">
                                             <img src="{{ asset('img/logos/elecomp.png') }}" alt="">
                                             <img src="{{ asset('img/banner-elecomp.png') }}" alt="">
