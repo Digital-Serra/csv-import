@@ -176,26 +176,6 @@
                                                     <!-- CONTENT TABLE // -->
                                                     <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%">
                                                         <tr>
-                                                            <!--
-                                                                The "invisibleIntroduction" is the text used for short preview
-                                                                of the email before the user opens it (50 characters max). Sometimes,
-                                                                you do not want to show this message depending on your design but this
-                                                                text is highly recommended.
-                                                                You do not have to worry if it is hidden, the next <td> will automatically
-                                                                center and apply to the width 100% and also shrink to 50% if the first <td>
-                                                                is visible.
-                                                            -->
-                                                            <td align="left" valign="middle" id="invisibleIntroduction" class="flexibleContainerBox" style="display:none !important; mso-hide:all;">
-                                                                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:100%;">
-                                                                    <tr>
-                                                                        <td align="left" class="textContent">
-                                                                            <div style="font-family:Helvetica,Arial,sans-serif;font-size:13px;color:#828282;text-align:center;line-height:120%;">
-                                                                                The introduction of your message preview goes here. Try to make it short.
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                </table>
-                                                            </td>
                                                             <td align="right" valign="middle" class="flexibleContainerBox">
                                                                 <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:100%;">
                                                                     <tr>
@@ -356,7 +336,7 @@
                     <!-- // MODULE ROW -->
                 </table>
                 <!-- // END -->
-
+                @include('emails.includes.footer')
             </td>
         </tr>
     </table>

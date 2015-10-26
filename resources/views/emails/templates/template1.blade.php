@@ -176,26 +176,6 @@
                                                     <!-- CONTENT TABLE // -->
                                                     <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%">
                                                         <tr>
-                                                            <!--
-                                                                The "invisibleIntroduction" is the text used for short preview
-                                                                of the email before the user opens it (50 characters max). Sometimes,
-                                                                you do not want to show this message depending on your design but this
-                                                                text is highly recommended.
-                                                                You do not have to worry if it is hidden, the next <td> will automatically
-                                                                center and apply to the width 100% and also shrink to 50% if the first <td>
-                                                                is visible.
-                                                            -->
-                                                            <td align="left" valign="middle" id="invisibleIntroduction" class="flexibleContainerBox" style="display:none !important; mso-hide:all;">
-                                                                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:100%;">
-                                                                    <tr>
-                                                                        <td align="left" class="textContent">
-                                                                            <div style="font-family:Helvetica,Arial,sans-serif;font-size:13px;color:#828282;text-align:center;line-height:120%;">
-                                                                                The introduction of your message preview goes here. Try to make it short.
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                </table>
-                                                            </td>
                                                             <td align="right" valign="middle" class="flexibleContainerBox">
                                                                 <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:100%;">
                                                                     <tr>
@@ -1247,38 +1227,8 @@
                         in this email, simply move or copy the entire
                         MODULE ROW section for each content block.
                     -->
-                    <tr>
-                        <td align="center" valign="top">
-                            <!-- CENTERING TABLE // -->
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                <tr>
-                                    <td align="center" valign="top">
-                                        <!-- FLEXIBLE CONTAINER // -->
-                                        <table border="0" cellpadding="0" cellspacing="0" width="500" class="flexibleContainer">
-                                            <tr>
-                                                <td align="center" valign="top" width="500" class="flexibleContainerCell">
-                                                    <table border="0" cellpadding="30" cellspacing="0" width="100%">
-                                                        <tr>
-                                                            <td valign="top" bgcolor="#E1E1E1">
 
-                                                                <div style="font-family:Helvetica,Arial,sans-serif;font-size:13px;color:#828282;text-align:center;line-height:120%;">
-                                                                    <div>Copyright &#169; 2014 <a href="http://www.charlesmudy.com/respmail/" target="_blank" style="text-decoration:none;color:#828282;"><span style="color:#828282;">Respmail</span></a>. All&nbsp;rights&nbsp;reserved.</div>
-                                                                    <div>If you do not want to recieve emails from us, you can <a href="#" target="_blank" style="text-decoration:none;color:#828282;"><span style="color:#828282;">unsubscribe</span></a>.</div>
-                                                                </div>
-
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                        <!-- // FLEXIBLE CONTAINER -->
-                                    </td>
-                                </tr>
-                            </table>
-                            <!-- // CENTERING TABLE -->
-                        </td>
-                    </tr>
+                    @include('emails.includes.footer')
 
                 </table>
                 <!-- // END -->
