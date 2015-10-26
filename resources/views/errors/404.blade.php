@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Missing Page - 404</title>
+    <title>404</title>
     <style type="text/css">
         body { color: #fff; text-shadow: 0 1px 2px #000; font-family: "chaparral-pro", 'Helvetica Neue', arial, sans-serif; }
         div.dialog {
@@ -37,14 +37,15 @@
 <body>
 <!-- This file lives in public/404.html -->
 <div class="dialog">
-    <h1>Yeah, that shit's gone.</h1>
-    <p>We've sent a pledge to find what you're looking for, but who knows how long that'll take. You're better off going back to the <a href="http://fratfolder.com" alt="Fratfolder.com">home page</a> or letting our <a href="mailto:admin@fratfolder.com" alt="E-mail Us">academic chair</a> know about this.</p>
-    <p>This is a great opportunity to take a quick study break with a beer and reflect on how much ass you're going to kick on that test tomorrow.</p>
+    <h1>Oops, algo deu errado!</h1>
+    <p>Desculpe,a página que você está tentando acessar não foi encontrada!</p>
+    <a href="{{ route('dashboard.index') }}">Voltar a página inicial</a>
 </div>
 
 <script type="text/javascript">
     //http://i.imgur.com/3mykX.gif
-    $.anystretch("http://payload202.cargocollective.com/1/13/430252/6345864/Gif-Vache-_600.gif", {speed: 150});
+    //http://payload202.cargocollective.com/1/13/430252/6345864/Gif-Vache-_600.gif
+    $.anystretch("https://media.giphy.com/media/12XMGIWtrHBl5e/giphy.gif", {speed: 150});
 </script>
 
 </body>
