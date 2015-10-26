@@ -48,7 +48,7 @@ class SendEmail extends Job implements SelfHandling, ShouldQueue
                 ], function ($message) {
                     $message->from(env('MAIL_ADMIN', null), env('MAIL_ADMIN_NAME',null))
                         ->to($this->email->email, $this->email->name)
-                        ->subject('Oi, '.$this->email->nome.', ofertas exclusivas você encontra na Elecomp!‏');
+                        ->subject('Oi, '.$this->email->name.', ofertas exclusivas você encontra na Elecomp!‏');
                 });
 
             //Log emails sended
