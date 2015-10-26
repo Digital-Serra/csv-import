@@ -1,13 +1,10 @@
 <?php
-
 namespace App\Exceptions;
-
 use Exception;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
-
 class Handler extends ExceptionHandler
 {
     /**
@@ -19,7 +16,6 @@ class Handler extends ExceptionHandler
         HttpException::class,
         ModelNotFoundException::class,
     ];
-
     /**
      * Report or log an exception.
      *
@@ -32,7 +28,6 @@ class Handler extends ExceptionHandler
     {
         return parent::report($e);
     }
-
     /**
      * Render an exception into an HTTP response.
      *
@@ -45,22 +40,6 @@ class Handler extends ExceptionHandler
         if ($e instanceof ModelNotFoundException) {
             $e = new NotFoundHttpException($e->getMessage(), $e);
         }
-
-        $whoops = new \Whoops\Run;
-
-        if ($request->ajax())
-        {
-            $whoops->pushHandler(new \Whoops\Handler\JsonResponseHandler());
-        }
-        else
-        {
-            $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler());
-        }
-
-        return new \Illuminate\Http\Response(
-            $whoops->handleException($e),
-            $e->getStatusCode(),
-            $e->getHeaders()
-        );
+        return parent::render($request, $e);
     }
 }
