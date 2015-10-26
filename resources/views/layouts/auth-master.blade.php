@@ -24,7 +24,7 @@
     <div id="loginbox" class="mainbox col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
 
         <div class="row text-center">
-            <img class="img-responsive" src="{{ asset('img/logo.svg') }}"/>
+            <img class="img-responsive" src="http://www.digitalserra.com.br/images/Logo_Empresa.png"/>
         </div>
 
         <div class="row  text-center">
