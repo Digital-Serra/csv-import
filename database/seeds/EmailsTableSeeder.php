@@ -15,6 +15,7 @@ class EmailsTableSeeder extends Seeder
         DB::table('emails')->insert([
             'name'=>'Mauri',
             'email'=>'mauri870@gmail.com',
+            'token'=>bin2hex(random_bytes(30)),
             'created_at'=>\Carbon\Carbon::now(),
             'updated_at'=>\Carbon\Carbon::now(),
         ]);
