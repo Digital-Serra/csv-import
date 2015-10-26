@@ -250,9 +250,9 @@
                                                     <table border="0" cellpadding="30" cellspacing="0" width="100%">
                                                         <tr>
                                                             <td align="center" valign="top" class="textContent">
-                                                                <h1 style="color:#FFFFFF;line-height:100%;font-family:Helvetica,Arial,sans-serif;font-size:35px;font-weight:normal;margin-bottom:5px;text-align:center;">Bem vindo {{ $name }} </h1>
+                                                                <h1 style="color:#FFFFFF;line-height:100%;font-family:Helvetica,Arial,sans-serif;font-size:35px;font-weight:normal;margin-bottom:5px;text-align:center;">Olá, {{ $name }} </h1>
                                                                 <h2 style="text-align:center;font-weight:normal;font-family:Helvetica,Arial,sans-serif;font-size:23px;margin-bottom:10px;color:#205478;line-height:135%;"></h2>
-                                                                <div style="text-align:center;font-family:Helvetica,Arial,sans-serif;font-size:15px;margin-bottom:0;color:#FFFFFF;line-height:135%;">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</div>
+                                                                <div style="text-align:center;font-family:Helvetica,Arial,sans-serif;font-size:15px;margin-bottom:0;color:#FFFFFF;line-height:135%;">Pensando na sua comodidade a Digital Serra criou a ELECOMP, um canal de vendas na internet. Confira o nosso mix de produtos e as ofertas que preparamos!</div>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -285,10 +285,8 @@
                                         <!-- FLEXIBLE CONTAINER // -->
                                         <a href="www.digitalserra.com.br">
                                         <table border="0" cellpadding="30" cellspacing="0" width="500" class="flexibleContainer">
-                                            <img src="http://app.romanzza.com.br/editor/assets/653/Viagem2310/planeje.jpg" alt="">
-                                            <img src="http://app.romanzza.com.br/editor/assets/653/Viagem2310/romanzza.jpg" alt="">
-                                            <img src="http://app.romanzza.com.br/editor/assets/653/Viagem2310/quarto.jpg" alt="">
-                                            <img src="http://app.romanzza.com.br/editor/assets/653/Viagem2310/design.jpg" alt="">
+                                            <img src="{{ asset('img/logos/elecomp.png') }}" alt="">
+                                            <img src="{{ asset('img/banner-elecomp.png') }}" alt="">
                                         </table>
                                             </a>
                                         <!-- // FLEXIBLE CONTAINER -->
@@ -300,40 +298,6 @@
                     </tr>
                     <!-- // MODULE ROW -->
 
-
-                    <!-- MODULE ROW // -->
-                    <tr>
-                        <td align="center" valign="top">
-                            <!-- CENTERING TABLE // -->
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                <tr style="padding-top:0;">
-                                    <td align="center" valign="top">
-                                        <!-- FLEXIBLE CONTAINER // -->
-                                        <table border="0" cellpadding="30" cellspacing="0" width="500" class="flexibleContainer">
-                                            <tr>
-                                                <td style="padding-top:0;" align="center" valign="top" width="500" class="flexibleContainerCell">
-
-                                                    <!-- CONTENT TABLE // -->
-                                                    <table border="0" cellpadding="0" cellspacing="0" width="50%" class="emailButton" style="background-color: #16ABA8;">
-                                                        <tr>
-                                                            <td align="center" valign="middle" class="buttonContent" style="padding-top:15px;padding-bottom:15px;padding-right:15px;padding-left:15px;">
-                                                                <a style="color:#FFFFFF;text-decoration:none;font-family:Helvetica,Arial,sans-serif;font-size:20px;line-height:135%;" href="#" target="_blank">Confirmation</a>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                    <!-- // CONTENT TABLE -->
-
-                                                </td>
-                                            </tr>
-                                        </table>
-                                        <!-- // FLEXIBLE CONTAINER -->
-                                    </td>
-                                </tr>
-                            </table>
-                            <!-- // CENTERING TABLE -->
-                        </td>
-                    </tr>
-                    <!-- // MODULE ROW -->
                 </table>
                 <!-- // END -->
                 @include('emails.includes.footer')
