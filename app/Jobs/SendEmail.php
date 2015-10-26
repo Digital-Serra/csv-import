@@ -44,11 +44,11 @@ class SendEmail extends Job implements SelfHandling, ShouldQueue
                     'name' => $this->email->name,
                     'token' => $this->email->token,
                     'email' => $this->email->email,
-                    'title' => 'Título',
+                    'title' => 'Elecomp Soluções em Tecnologia',
                 ], function ($message) {
                     $message->from(env('MAIL_ADMIN', null), env('MAIL_ADMIN_NAME',null))
                         ->to($this->email->email, $this->email->name)
-                        ->subject('Olá e bem vindo!');
+                        ->subject('Oi, '.$this->email->nome.', ofertas exclusivas você encontra na Elecomp!‏');
                 });
 
             //Log emails sended
