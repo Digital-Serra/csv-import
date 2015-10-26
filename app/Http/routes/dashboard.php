@@ -20,7 +20,4 @@ Route::group(['middleware' => 'auth','namespace'=>'Dashboard'], function () {
             ->with('title','Tìtulo')
             ->with('token',bin2hex(random_bytes(30)));
     });
-
-
-
 });
