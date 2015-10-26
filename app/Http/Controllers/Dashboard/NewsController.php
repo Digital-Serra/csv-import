@@ -51,12 +51,13 @@ class NewsController extends Controller
                 ->withInput();
         }
 
-        /*//Recreate the table
+        //Recreate the table
         Schema::drop('emails');
         Schema::create('emails', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->string('email');
+            $table->string('token');
             $table->timestamps();
         });
 
@@ -66,7 +67,7 @@ class NewsController extends Controller
         }, 'UTF-8')->get();
         foreach($results as $result){
             Email::create(['name'=>$result->name,'email'=>$result->email,'token'=>bin2hex(random_bytes(30))]);
-        }*/
+        }
 
         $this->dispatch(new SendEmail());
 
