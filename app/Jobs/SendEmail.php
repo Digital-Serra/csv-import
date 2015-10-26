@@ -16,8 +16,8 @@ class SendEmail extends Job implements SelfHandling, ShouldQueue
 {
     use InteractsWithQueue, SerializesModels;
 
-    protected $emails;
-    protected $email;
+    private $emails;
+    private $email;
 
     /**
      * Create a new job instance.
@@ -42,6 +42,7 @@ class SendEmail extends Job implements SelfHandling, ShouldQueue
             Mail::send('emails.templates.template1-1',
                 [
                     'nome' => $this->email->nome,
+                    'token' => $this->email->token,
                     'email' => $this->email->email,
                     'title' => 'Título',
                 ], function ($message) {
