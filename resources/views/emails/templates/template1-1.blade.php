@@ -162,7 +162,7 @@
                 <table bgcolor="#E1E1E1" border="0" cellpadding="0" cellspacing="0" width="500" id="emailHeader">
 
                     <!-- HEADER ROW // -->
-                    <tr>
+                    {{--<tr>
                         <td align="center" valign="top">
                             <!-- CENTERING TABLE // -->
                             <table border="0" cellpadding="0" cellspacing="0" width="100%">
@@ -181,9 +181,9 @@
                                                                     <tr>
                                                                         <td align="left" class="textContent">
                                                                             <!-- CONTENT // -->
-                                                                            {{--<div style="font-family:Helvetica,Arial,sans-serif;font-size:13px;color:#828282;text-align:center;line-height:120%;">
+                                                                            --}}{{--<div style="font-family:Helvetica,Arial,sans-serif;font-size:13px;color:#828282;text-align:center;line-height:120%;">
                                                                                 If you can't see this message, <a href="#" target="_blank" style="text-decoration:none;border-bottom:1px solid #828282;color:#828282;"><span style="color:#828282;">view&nbsp;it&nbsp;in&nbsp;your&nbsp;browser</span></a>.
-                                                                            </div>--}}
+                                                                            </div>--}}{{--
                                                                         </td>
                                                                     </tr>
                                                                 </table>
@@ -199,7 +199,7 @@
                             </table>
                             <!-- // CENTERING TABLE -->
                         </td>
-                    </tr>
+                    </tr>--}}
                     <!-- // END -->
 
                 </table>
@@ -283,7 +283,7 @@
                                 <tr>
                                     <td align="center" valign="top">
                                         <!-- FLEXIBLE CONTAINER // -->
-                                        <a href="www.digitalserra.com.br">
+                                        <a href="http://elecomp.com.br" target='_blank'>
                                         <table border="0" cellpadding="30" cellspacing="0" width="500" class="flexibleContainer">
                                             <img src="{{ asset('img/logos/elecomp.png') }}" alt="">
                                             <img src="{{ asset('img/banner-elecomp.png') }}" alt="">
