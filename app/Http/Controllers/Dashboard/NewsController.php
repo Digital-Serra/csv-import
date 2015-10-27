@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Email;
 use App\Jobs\SendEmail;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Validator;
@@ -22,10 +24,13 @@ class NewsController extends Controller
     public $user;
 
     private $email;
+    private $emails;
 
     public function __construct()
     {
         $this->user = auth()->user();
+
+        $this->emails = Email::all();
     }
 
 
@@ -69,7 +74,26 @@ class NewsController extends Controller
             Email::create(['name'=>$result->name,'email'=>$result->email,'token'=>bin2hex(random_bytes(30))]);
         }
 
-        $this->dispatch(new SendEmail());
+        //Enviar email
+        $i = 1;
+        foreach ($this->emails as $this->email) {
+            Mail::queue('emails.templates.template1-1',
+                [
+                    'name' => $this->email->name,
+                    'token' => $this->email->token,
+                    'email' => $this->email->email,
+                    'title' => 'Elecomp Soluções em Tecnologia',
+                ], function ($message) {
+                    $message->from(env('MAIL_ADMIN', null), env('MAIL_ADMIN_NAME',null))
+                        ->to($this->email->email, $this->email->name)
+                        ->subject('Oi, '.$this->email->name.', ofertas exclusivas você encontra na Elecomp!‏');
+                });
+
+            //Log emails sended
+            Log::info('Email número ' . $i . ' enviado para ' . $this->email->nome . ' <' . $this->email->email . '> em ' . Carbon::now()->format('d/m/Y H:m:s'));
+
+            $i++;
+        }
 
         Flash::success("Seus emails estão sendo enviados!");
 
