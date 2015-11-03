@@ -74,7 +74,7 @@ class NewsController extends Controller
             Email::create(['name'=>$result->name,'email'=>$result->email,'token'=>bin2hex(random_bytes(30))]);
         }
 
-        //Enviar email
+        /*//Enviar email
         $i = 1;
         foreach ($this->emails as $this->email) {
             Mail::queue('emails.templates.template1-1',
@@ -93,9 +93,9 @@ class NewsController extends Controller
             Log::info('Email número ' . $i . ' enviado para ' . $this->email->nome . ' <' . $this->email->email . '> em ' . Carbon::now()->format('d/m/Y H:m:s'));
 
             $i++;
-        }
+        }*/
 
-        Flash::success("Seus emails estão sendo enviados!");
+        Flash::success("Emails cadastrados com sucesso");
 
         return redirect()->to(route('dashboard.getImport'));
     }
