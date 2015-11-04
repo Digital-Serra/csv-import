@@ -62,8 +62,8 @@ class ImportController extends Controller
             $reader->all();
         }, 'UTF-8')->get();
         foreach($results as $result){
-            if(Email::where('email','=',$result->email)->first() == []){
-                Email::create(['name'=>$result->name,'email'=>$result->email,'token'=>bin2hex(random_bytes(30))]);
+            if(Email::where('email','=',trim($result->email))->first() == []){
+                Email::create(['name'=>$result->name,'email'=>trim($result->email),'token'=>bin2hex(random_bytes(30))]);
             }
         }
 
