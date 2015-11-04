@@ -176,6 +176,11 @@ return [
 
         Maatwebsite\Excel\ExcelServiceProvider::class,
 
+        /*
+         * Mailgun Package
+         * */
+        Bogardo\Mailgun\MailgunServiceProvider::class,
+
     ],
 
     /*
@@ -238,8 +243,11 @@ return [
         //Laracasts Flash
         'Flash' => Laracasts\Flash\Flash::class,
 
-
+        //Excel
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+
+        //Mailgun Package
+        'Mailgun' => Bogardo\Mailgun\Facades\Mailgun::class
 
     ],
 
