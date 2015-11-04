@@ -3,8 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Email;
-use App\Jobs\SendEmail;
-use Bogardo\Mailgun\Mailgun;
+use Bogardo\Mailgun\Facades\Mailgun;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Requests;
