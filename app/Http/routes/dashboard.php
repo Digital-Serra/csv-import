@@ -4,11 +4,11 @@ Route::group(['middleware' => 'auth','namespace'=>'Dashboard'], function () {
     Route::get('/dashboard',['as'=>'dashboard.index','uses'=>'DashController@index']);
 
     // Import
-    Route::get('/dashboard/import',['as'=>'dashboard.getImport','uses'=>'NewsController@getImport']);
-    Route::post('/dashboard/import',['as'=>'dashboard.postImport','uses'=>'NewsController@postImport']);
+    Route::get('/dashboard/import',['as'=>'dashboard.getImport','uses'=>'ImportController@getImport']);
+    Route::post('/dashboard/import',['as'=>'dashboard.postImport','uses'=>'ImportController@postImport']);
 
     // Import
-    Route::get('/dashboard/emails',['as'=>'dashboard.showEmails','uses'=>'NewsController@showEmails']);
+    Route::get('/dashboard/emails',['as'=>'dashboard.showEmails','uses'=>'ImportController@showEmails']);
 
 
     // Test email templates

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Email;
 use App\Jobs\SendEmail;
+use Bogardo\Mailgun\Mailgun;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -19,7 +20,7 @@ use Illuminate\Support\Facades\Artisan;
 use Illuminate\Database\Schema\Blueprint;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
-class ExportController extends Controller
+class ImportController extends Controller
 {
     public $user;
 
@@ -38,6 +39,8 @@ class ExportController extends Controller
      * Import contacts
      */
     public function getImport(){
+        $mails = Mailgun::lists()->get('teste@sandboxaae29e84ff6a44db84a4f049b37cc635.mailgun.org');
+        dd($mails);
         return view('dashboard.emails.import')
             ->with('user',$this->user->name)
             ->with('emails',Email::all());
