@@ -38,8 +38,6 @@ class ImportController extends Controller
      * Import contacts
      */
     public function getImport(){
-        $mails = Mailgun::lists()->get('teste@sandboxaae29e84ff6a44db84a4f049b37cc635.mailgun.org');
-        dd($mails);
         return view('dashboard.emails.import')
             ->with('user',$this->user->name)
             ->with('emails',Email::all());
@@ -58,23 +56,15 @@ class ImportController extends Controller
                 ->withInput();
         }
 
-        //Recreate the table
-        Schema::drop('emails');
-        Schema::create('emails', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-            $table->string('email');
-            $table->string('token');
-            $table->timestamps();
-        });
-
-        //Detach excel file line per line
+        //Dettach excel file line per line
         $results = Excel::load($request->file('table'), function($reader){
             $reader->ignoreEmpty();
             $reader->all();
         }, 'UTF-8')->get();
         foreach($results as $result){
-            Email::create(['name'=>$result->name,'email'=>$result->email,'token'=>bin2hex(random_bytes(30))]);
+            if(Email::where('email','=',$result->email)->first() == []){
+                Email::create(['name'=>$result->name,'email'=>$result->email,'token'=>bin2hex(random_bytes(30))]);
+            }
         }
 
         /*//Enviar email
@@ -98,7 +88,7 @@ class ImportController extends Controller
             $i++;
         }*/
 
-        Flash::success("Emails cadastrados com sucesso");
+        Flash::success("Contatos importados com sucesso!");
 
         return redirect()->to(route('dashboard.getImport'));
     }
