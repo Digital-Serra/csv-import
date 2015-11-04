@@ -18,9 +18,9 @@
                 <td>{{ $email->email }}</td>
                 <td>
                     <div class="btn-group">
-                        <button type="button" class="btn btn-primary"><i class="fa fa-plus" data-toggle="tooltip" title="Adicionar a uma campanha"></i></button>
-                        <button type="button" class="btn btn-warning"><i class="fa fa-edit" data-toggle="tooltip" title="Editar"></i></button>
-                        <button type="button" class="btn btn-danger"><i class="fa fa-times" data-toggle="tooltip" title="Excluir"></i></button>
+                        <a href="{{ route('dashboard.deleteEmails',['id'=>$email->id]) }}" data-toggle="tooltip" title="Adicionar a uma campanha"><button type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button></a>
+                        <a href="{{ route('dashboard.editEmails',['id'=>$email->id]) }}"><button type="button" class="btn btn-warning"><i class="fa fa-edit" data-toggle="tooltip" title="Editar"></i></button></a>
+                        <a href="{{ route('dashboard.deleteEmails',['id'=>$email->id]) }}" data-toggle="tooltip" title="Excluir"><button type="button" class="btn btn-danger"><i class="fa fa-times"></i></button></a>
                     </div>
                 </td>
             </tr>

@@ -1,12 +1,11 @@
 @extends('layouts.dashboard')
-@section('title','Importe seus emails')
+@section('title','Editar contato')
 
 @section('content')
-    <h3>Importe seus contatos</h3>
-
-    {!! Form::open(['url' => route('dashboard.postImport'),'files'=>'true']) !!}
-        @include('forms.import')
+    <h3>Editar contato</h3>
+    {!! Form::model($email,['url' => route('dashboard.editEmailsPost',['id'=>$email->id])]) !!}
+        @include('forms.email')
     <br>
-        <button class="btn btn-success" type="submit">Importar</button>
+        <button class="btn btn-success" type="submit">Editar</button>
     {!! Form::close() !!}
 @stop
