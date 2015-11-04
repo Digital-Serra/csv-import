@@ -18,9 +18,9 @@
                 <td>{{ $email->email }}</td>
                 <td>
                     <div class="btn-group">
-                        <a href="{{ route('dashboard.deleteEmails',['id'=>$email->id]) }}" data-toggle="tooltip" title="Adicionar a uma campanha"><button type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button></a>
-                        <a href="{{ route('dashboard.editEmails',['id'=>$email->id]) }}"><button type="button" class="btn btn-warning"><i class="fa fa-edit" data-toggle="tooltip" title="Editar"></i></button></a>
-                        <a href="{{ route('dashboard.deleteEmails',['id'=>$email->id]) }}" data-toggle="tooltip" title="Excluir"><button type="button" class="btn btn-danger"><i class="fa fa-times"></i></button></a>
+                        <a href="{{ route('dashboard.deleteEmails',['id'=>$email->id]) }}" data-toggle="tooltip" title="Adicionar a uma campanha"><button type="button" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i></button></a>
+                        <a href="{{ route('dashboard.editEmails',['id'=>$email->id]) }}"><button type="button" class="btn btn-warning btn-xs"><i class="fa fa-edit" data-toggle="tooltip" title="Editar"></i></button></a>
+                        <a href="#" onclick="click_del('{{ route('dashboard.deleteEmails',['id'=>$email->id]) }}')" data-toggle="tooltip" title="Excluir"><button type="button" class="btn btn-danger btn-xs"><i class="fa fa-times"></i></button></a>
                     </div>
                 </td>
             </tr>
