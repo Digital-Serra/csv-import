@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Artisan;
 use Illuminate\Database\Schema\Blueprint;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
-class NewsController extends Controller
+class ExportController extends Controller
 {
     public $user;
 
@@ -66,6 +66,7 @@ class NewsController extends Controller
             $table->timestamps();
         });
 
+        //Detach excel file line per line
         $results = Excel::load($request->file('table'), function($reader){
             $reader->ignoreEmpty();
             $reader->all();
