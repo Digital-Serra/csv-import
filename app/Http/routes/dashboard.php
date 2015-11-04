@@ -7,8 +7,8 @@ Route::group(['middleware' => 'auth','namespace'=>'Dashboard'], function () {
     Route::get('/dashboard/import',['as'=>'dashboard.getImport','uses'=>'ImportController@getImport']);
     Route::post('/dashboard/import',['as'=>'dashboard.postImport','uses'=>'ImportController@postImport']);
 
-    // Import
-    Route::get('/dashboard/emails',['as'=>'dashboard.showEmails','uses'=>'ImportController@showEmails']);
+    // Show Emails
+    Route::get('/dashboard/emails',['as'=>'dashboard.showEmails','uses'=>'EmailController@showEmails']);
 
 
     // Test email templates
