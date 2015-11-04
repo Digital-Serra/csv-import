@@ -8,6 +8,7 @@
         <tr>
             <th>Nome</th>
             <th>Email</th>
+            <th>Actions</th>
         </tr>
         </thead>
         <tbody>
@@ -15,6 +16,13 @@
             <tr>
                 <td>{{ $email->name }}</td>
                 <td>{{ $email->email }}</td>
+                <td>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-primary"><i class="fa fa-plus" data-toggle="tooltip" title="Adicionar a uma campanha"></i></button>
+                        <button type="button" class="btn btn-warning"><i class="fa fa-edit" data-toggle="tooltip" title="Editar"></i></button>
+                        <button type="button" class="btn btn-danger"><i class="fa fa-times" data-toggle="tooltip" title="Excluir"></i></button>
+                    </div>
+                </td>
             </tr>
         @endforeach
     </table>
