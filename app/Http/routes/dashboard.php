@@ -10,6 +10,13 @@ Route::group(['middleware' => 'auth','namespace'=>'Dashboard'], function () {
     // Show Emails
     Route::get('/dashboard/emails',['as'=>'dashboard.showEmails','uses'=>'EmailController@showEmails']);
 
+    // Show Emails
+    Route::get('/dashboard/emails/edit/{id}',['as'=>'dashboard.editEmails','uses'=>'EmailController@editEmails']);
+    Route::post('/dashboard/emails/edit/{id}',['as'=>'dashboard.editEmailsPost','uses'=>'EmailController@editEmailsPost']);
+
+    //Delete Emails
+    Route::get('/dashboard/delete/{id}',['as'=>'dashboard.deleteEmails','uses'=>'EmailController@delete']);
+
 
     // Test email templates
     Route::get('/dashboard/templates/{name}',function($name){
