@@ -77,16 +77,16 @@ class NewsController extends Controller
         //Enviar email
         $i = 1;
         foreach ($this->emails as $this->email) {
-            Mail::queue('emails.templates.template1-1',
+            Mail::queue('emails.templates.natal',
                 [
                     'name' => $this->email->name,
                     'token' => $this->email->token,
                     'email' => $this->email->email,
-                    'title' => 'Elecomp Soluções em Tecnologia',
+                    'title' => 'Feliz Natal e próspero ano novo!',
                 ], function ($message) {
                     $message->from(env('MAIL_ADMIN', null), env('MAIL_ADMIN_NAME',null))
                         ->to($this->email->email, $this->email->name)
-                        ->subject('Oi, '.$this->email->name.', ofertas exclusivas você encontra na Elecomp!‏');
+                        ->subject('Olá, '.$this->email->name.', a Digital Serra deseja um feliz natal e próspero ano novo!');
                 });
 
             //Log emails sended
