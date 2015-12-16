@@ -49,16 +49,13 @@ class NewsController extends Controller
     public function getExport(){
         $data = Email::all();
 
-        Excel::create('contacts', function($excel) use ($data) {
+        return Excel::create('contacts', function($excel) use ($data) {
             $excel->sheet('Contatos', function($sheet) use ($data) {
 
                 $sheet->fromArray($data);
 
             });
         })->export('xls');
-
-        Flash::sucess('Seus Contatos foram exportados com sucesso');
-        return redirect()->route('dashboard.index');
     }
 
     /**
@@ -94,7 +91,7 @@ class NewsController extends Controller
 
         //Enviar email
         $i = 1;
-        /*foreach ($this->emails as $this->email) {
+        foreach ($this->emails as $this->email) {
             Mail::queue('emails.templates.natal',
                 [
                     'name' => $this->email->name,
@@ -111,7 +108,7 @@ class NewsController extends Controller
             Log::info('Email número ' . $i . ' enviado para ' . $this->email->nome . ' <' . $this->email->email . '> em ' . Carbon::now()->format('d/m/Y H:m:s'));
 
             $i++;
-        }*/
+        }
 
         Flash::success("Seus emails estão sendo enviados!");
 
