@@ -78,6 +78,9 @@
                         <li>
                             <a href="{{ route('dashboard.getImport') }}"><i class="fa fa-fw fa-plus"></i> Importar emails</a>
                         </li>
+                        <li>
+                            <a href="{{ route('dashboard.getExport') }}"><i class="fa fa-fw fa-download"></i> Exportar emails</a>
+                        </li>
                     </ul>
                 </li>
                 {{--<li>

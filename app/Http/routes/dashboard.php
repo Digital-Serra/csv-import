@@ -7,7 +7,10 @@ Route::group(['middleware' => 'auth','namespace'=>'Dashboard'], function () {
     Route::get('/dashboard/import',['as'=>'dashboard.getImport','uses'=>'NewsController@getImport']);
     Route::post('/dashboard/import',['as'=>'dashboard.postImport','uses'=>'NewsController@postImport']);
 
-    // Import
+    // Export
+    Route::get('/dashboard/export',['as'=>'dashboard.getExport','uses'=>'NewsController@getExport']);
+
+    // Show
     Route::get('/dashboard/emails',['as'=>'dashboard.showEmails','uses'=>'NewsController@showEmails']);
 
 
