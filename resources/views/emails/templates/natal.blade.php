@@ -227,7 +227,7 @@
                                 tables centered in the emailBody table,
                                 in case its width is set to 100%.
                             -->
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="color:#FFFFFF;" bgcolor="#0967AA">
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="color:#FFFFFF;" bgcolor="#FFFFFF">
                                 <tr>
                                     <td align="center" valign="top">
                                         <!-- FLEXIBLE CONTAINER // -->
@@ -250,9 +250,9 @@
                                                     <table border="0" cellpadding="30" cellspacing="0" width="100%">
                                                         <tr>
                                                             <td align="center" valign="top" class="textContent">
-                                                                <h1 style="color:#FFFFFF;line-height:100%;font-family:Helvetica,Arial,sans-serif;font-size:35px;font-weight:normal;margin-bottom:5px;text-align:center;">Olá, {{ $name }} </h1>
-                                                                <h2 style="text-align:center;font-weight:normal;font-family:Helvetica,Arial,sans-serif;font-size:23px;margin-bottom:10px;color:#205478;line-height:135%;"></h2>
-                                                                <div style="text-align:center;font-family:Helvetica,Arial,sans-serif;font-size:15px;margin-bottom:0;color:#FFFFFF;line-height:135%;"></div>
+                                                                <h1 style="color:#0967AA;line-height:100%;font-family:Helvetica,Arial,sans-serif;font-size:35px;font-weight:normal;margin-bottom:5px;text-align:center;">Olá, {{ $name }} </h1>
+                                                                {{--<h2 style="text-align:center;font-weight:normal;font-family:Helvetica,Arial,sans-serif;font-size:23px;margin-bottom:10px;color:#205478;line-height:135%;"></h2>
+                                                                <div style="text-align:center;font-family:Helvetica,Arial,sans-serif;font-size:15px;margin-bottom:0;color:#FFFFFF;line-height:135%;"></div>--}}
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -286,7 +286,7 @@
                                         <a href="http://digitalserra.com.br" target='_blank'>
                                         <table border="0" cellpadding="30" cellspacing="0" width="500" class="flexibleContainer">
                                             <img src="{{ asset('img/natal2015.png') }}" width="500px" height="276px" alt="">
-                                            <img src="{{ asset('img/logos/digitalserra.png') }}" width="390px" height="107px" alt="">
+                                            <img src="{{ asset('img/logos/digitalserra.png') }}" width="250px" height="107px" alt="">
                                         </table>
                                             </a>
                                         <!-- // FLEXIBLE CONTAINER -->
