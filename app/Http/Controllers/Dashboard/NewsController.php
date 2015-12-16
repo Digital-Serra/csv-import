@@ -86,7 +86,7 @@ class NewsController extends Controller
             $reader->all();
         }, 'UTF-8')->get();
         foreach($results as $result){
-            Email::create(['name'=>$result->name,'email'=>$result->email,'token'=>bin2hex(random_bytes(30))]);
+            Email::create(['name'=>trim($result->name),'email'=>trim($result->email),'token'=>bin2hex(random_bytes(30))]);
         }
 
         //Enviar email
